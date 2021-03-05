@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Spotify music recommendation App</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Back</strong> Home Page</a>
+									<ul class="icons">
+										<li><a href="https://twitter.com/ayushranjan14" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://github.com/AyushRanjan15" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://medium.com/@ayushranjan_46505" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+										<li><a href="https://www.linkedin.com/in/ayush-ranjan-582b9a136/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Spotify music recommendation App</h1>
+									</header>
+
+									<span class="image main"><img src="images/project_image/spotify/top.png" alt="" /></span>
+
+									<ul class="actions">
+										<li><a href="https://github.com/AyushRanjan15/spotify-recommendation-system/tree/master" class="button primary">Link To Git</a></li>
+									</ul>
+									Generate recommendations for any one of your spotify playlists!
+
+									<!-- PROJECT SHIELDS -->
+									<!--
+                                    *** I'm using markdown "reference style" links for readability.
+                                    *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+                                    *** See the bottom of this document for the declaration of the reference variables
+                                    *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+                                    *** https://www.markdownguide.org/basic-syntax/#reference-style-links
+                                    -->
+
+
+									<!-- PROJECT LOGO -->
+									<br />
+									<p align="center">
+
+									<h3 align="center">spotify recommendation system</h3>
+
+									<p align="center">
+										Let Stats find you some tracks!!
+									</p>
+									</p>
+
+
+
+									<!-- TABLE OF CONTENTS -->
+									<details open="open">
+										<summary>Table of Contents</summary>
+										<ol>
+											<li>
+												<a href="#about-the-project">About The Project</a>
+												<ul>
+													<li><a href="#built-with">Built With</a></li>
+												</ul>
+											</li>
+											<li><a href="#prerequisites">Prerequisites</a></li>
+											<li>
+												<a href="#getting-started">Getting Started</a>
+												<ul>
+													<li><a href="#Methodology">Methodology</a></li>
+												</ul>
+											</li>
+											<li><a href="#usage">Usage</a></li>
+											<li><a href="#license">License</a></li>
+										</ol>
+									</details>
+
+
+
+									<!-- ABOUT THE PROJECT -->
+									<h2>About The Project</h2>
+									<span class="image main"><img src="images/project_image/spotify/product.png" alt="" /></span>
+
+									<p>The aim of this project is to generate song recommendations for a target spotify playlist given a source playlist.</p>
+
+									<h2>Built With</h2>
+									<ul>This section list major frameworks that is used to built the project.</ul>
+									<li><a href="https://www.python.org">Python</a></li>
+									<li><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a></li>
+									<li><a href="https://spotipy.readthedocs.io/en/2.17.1/">Spotipy</a></li>
+
+									<h2>Methodology</h2>
+									<span class="image main"><img src="images/project_image/spotify/process_2.png" alt="" /></span>
+
+
+									<p>Each song in the source playlist is represented as a vector in the feature space.</p>
+
+									<ol>Our feature space consists of 3 major type of song features:</ol>
+
+									<li>Genre that the song belongs to.( We used TFIDF to encode the genre )</li>
+									<li>Audio Features of the song. ( As provided by spotify )</li>
+									<li>Descriptive features of the song which were engineered.</li>
+
+									<p>Once we have vector of every song in our source playlist, we summarize all the songs to generate a single vector.</p>
+									<span class="image main"><img src="images/project_image/spotify/summarization_2.png" alt="" /></span>
+
+									<span class="image main"><img src="images/project_image/spotify/cosine_sim_2.png" alt="" /></span>
+
+									<p>We search for a song vectors in our target playlist, which are most similar to our source playlist vector.</p>
+
+									<h2>TF-IDF</h2>
+
+									<p>In information retrieval, tf–idf, TF*IDF, or TFIDF, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus.[1] It is often used as a weighting factor in searches of information retrieval, text mining, and user modeling.</p>
+
+									<span class="image main"><img src="images/project_image/spotify/tfidf_4.png" alt="" /></span>
+
+
+									<!-- GETTING STARTED -->
+									<h2>Getting Started</h2>
+
+									<p>This is an example of how you may give instructions on setting up your project locally.
+										To get a local copy up and running follow these simple example steps.</p>
+
+									<h2>Prerequisites</h2>
+
+									<p>You will need to setup a spotify <a href="https://developer.spotify.com">developers account</a> and create an app over there. Once you are done with that, you will receive a CLIENT_ID and CLIENT_SECRET which will help you to pull data from spotify account.</p>
+									<p>In server.py file replace fill these feilds as displayed in your app<br/>
+										```<br/>
+										client_id = '2ab55afd64cd4a9a86bb74e93a4f75f5'<br/>
+										client_secret = '20d4708024db41d6a193b4d03e08d55e'<br/>
+										```<br/>
+										You will also need to edit seeting on your dashboard and fill out redirect URI field in the Edit Settings section.</p>
+									<span class="image main"><img src="images/project_image/spotify/app_setting.png" alt="" /></span>
+
+									<p>
+										This redirect URI shoild be same as in util.prompt_for_user_token<br/>
+										```<br/>
+										<b>util.prompt_for_user_token(scope, client_id=client_id, client_secret=client_secret,</b><br/>
+										<b>redirect_uri='http://google.com/')</b><br/>
+										```<br/>
+									</p>
+
+									<!-- USAGE EXAMPLES -->
+									<h2>Usage</h2>
+
+									<ol>The first step will be to start the flask server. Follow these steps:</ol>
+
+									<li>cd to server folder.</li>
+									<li>use</li>
+									<p>
+										```<br/>
+										<b>python util.py (your spotify user URI)</b><br/>
+										```<br/>
+										for example my user URI is : spotify:user:7ur7jjowtivgnatopjff8102l<br/>
+
+										```<br/>
+										<b>python util.py 7ur7jjowtivgnatopjff8102l</b><br/>
+										```<br/>
+										<b>You can access playlist URI like this</b></p>
+									<span class="image main"><img src="https://media.giphy.com/media/rEq1P8mItXXtMGqJ1W/giphy.gif" alt="" /></span>
+
+									<!--									![Alt Text](https://media.giphy.com/media/rEq1P8mItXXtMGqJ1W/giphy.gif)-->
+
+									<p>You can launch the app in the browser using client/index.html file. Once you launch the app in the browser the source playlist URI goes in the left text field and the target playlist URI goes in right text field. Hit <b>search</b>
+									</p>
+
+									<h2> References </h2>
+									<ol></ol>
+									<li><a href="https://www.youtube.com/watch?v=tooddaC14q4">project inspiration</a></li>
+
+
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Please feel free to get in touch</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">ayushranjan15@gmail.com</a></li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
